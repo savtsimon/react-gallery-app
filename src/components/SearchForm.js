@@ -1,14 +1,13 @@
 import React, { useRef } from "react"
 import { useNavigate } from "react-router-dom"
 
-const SearchForm = (props) => {
-    let { setSearchTerm } = props
+const SearchForm = () => {
     const searchTerm = useRef()
     const navigate = useNavigate();
     function handleSubmit(e) {
         e.preventDefault();
-        navigate(`/${searchTerm.current.value}`);
-        setSearchTerm(searchTerm.current.value)
+        navigate(`/search/${searchTerm.current.value}`);
+        searchTerm.current.value = ""
     }
     return (
         <form className="search-form" onSubmit={handleSubmit}>

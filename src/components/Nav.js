@@ -1,17 +1,14 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 
-const Nav = ({ setSearchTerm }) => {
-    function handleNav(e) {
-        setSearchTerm(e.target.textContent)
-    }
+const Nav = () => {
     return (
         <nav className="main-nav">
             <ul>
-                <li><NavLink to='/cats' onClick={handleNav}>Cats</NavLink></li>
-                <li><NavLink to='/rabbits' onClick={handleNav}>Rabbits</NavLink></li>
-                <li><NavLink to='/sloths' onClick={handleNav}>Sloths</NavLink></li>
-                <li><NavLink to='/porcupines' onClick={handleNav}>Porcupines</NavLink></li>
+                <li><NavLink to='/cats' >Cats</NavLink></li>
+                <li><NavLink to='/rabbits' >Rabbits</NavLink></li>
+                <li><NavLink to='/sloths'>Sloths</NavLink></li>
+                <li><NavLink to='/porcupines'>Porcupines</NavLink></li>
             </ul>
         </nav>
     )
