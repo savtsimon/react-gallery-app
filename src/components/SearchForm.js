@@ -2,11 +2,15 @@ import React, { useRef } from "react"
 import { useNavigate } from "react-router-dom"
 
 const SearchForm = () => {
+    //Place reference on the input element
     const searchTerm = useRef()
     const navigate = useNavigate();
+    // Navigate to the searched URL
     function handleSubmit(e) {
         e.preventDefault();
+        // Redirect to the search URL with the correct search term
         navigate(`/search/${searchTerm.current.value}`);
+        // Reset the search input value
         searchTerm.current.value = ""
     }
     return (
